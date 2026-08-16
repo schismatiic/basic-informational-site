@@ -19,16 +19,13 @@ const server = http.createServer(async (req, res) => {
       path += "404.html";
       break;
   }
-  const readHTML = () => {
-    try {
-      const data = await fs.readFile(path);
-      res.end(data);
-    } catch (err) {
-      console.log(err);
-      res.end();
-    }
-  };
-  readHTML();
+  try {
+    const data = await fs.readFile(path);
+    res.end(data);
+  } catch (err) {
+    console.log(err);
+    res.end();
+  }
 });
 
 server.listen(8080, "localhost", () => {
