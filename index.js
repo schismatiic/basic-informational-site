@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("node:fs/promises");
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   res.setHeader("Content-Type", "text/html");
   let path = "./";
 
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
       path += "404.html";
       break;
   }
-  const readHTML = async () => {
+  const readHTML = () => {
     try {
       const data = await fs.readFile(path);
       res.end(data);
