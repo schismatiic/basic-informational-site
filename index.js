@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
-  let path = "./pages/";
+  let path = "./";
 
   switch (req.url) {
     case "/":
