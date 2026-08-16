@@ -4,6 +4,7 @@ const fs = require("node:fs/promises");
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
   let path = "./pages/";
+
   switch (req.url) {
     case "/":
       path += "index.html";
